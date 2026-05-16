@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Solar } from 'lunar-javascript';
 
 export interface DivinationResult {
@@ -8,9 +9,7 @@ export interface DivinationResult {
   overallFortune: string;
 }
 
-const FIVE_ELEMENTS = ['金', '木', '水', '火', '土'];
-const TEN_STEMS = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
-const TWELVE_BRANCHES = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+
 
 // Simple deterministic hash based on a string
 function simpleHash(str: string): number {
@@ -33,7 +32,7 @@ export function performDivination(name: string, year: number, month: number, day
   
   // 2. Character Analysis (Plum Blossom approach combined with hash)
   const charHash = simpleHash(testChar);
-  const hexagramIndex = charHash % 64;
+
   
   const charInterpretations = [
     `“${testChar}”字暗藏玄机。从字形来看，此字笔画之中透露出一种向上的升腾之气。结合您的八字，近期在事业或学业上将有突破。`,
